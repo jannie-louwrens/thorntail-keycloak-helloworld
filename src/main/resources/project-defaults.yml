@@ -18,4 +18,4 @@ thorntail:
         resource: my-app
         public-client: true
         ssl-required: EXTERNAL
-#        principal-attribute: preferred_username
+        principal-attribute: preferred_username
