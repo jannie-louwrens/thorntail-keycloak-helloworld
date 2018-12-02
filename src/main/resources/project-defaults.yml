@@ -1,0 +1,21 @@
+thorntail:
+  http:
+    port: 8081
+  deployment:
+    demo.war:
+      web:
+        login-config:
+          auth-method: KEYCLOAK
+        security-constraints:
+        - url-pattern: /hello
+          roles:
+          - "user"
+  keycloak:
+    secure-deployments:
+      demo.war:
+        auth-server-url: "http://localhost:8080/auth"
+        realm: demo
+        resource: my-app
+        public-client: true
+        ssl-required: EXTERNAL
+#        principal-attribute: preferred_username
